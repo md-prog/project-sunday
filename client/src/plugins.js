@@ -1,3 +1,6 @@
+/**
+ * Greensocks and its CSSRulePlugin
+ */
 var _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : this || window;
 (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push(function () {
         "use strict";
