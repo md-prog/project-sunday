@@ -1,0 +1,61 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "title": "Interior Design and Staging",
+        "headline": "Interior design and staging services.",
+        "description": "Professional interior design consultation for home, business, and remodels. We can help create a space that makes you happy to spend your time. Available for those looking to list their home on the market is a full range of staging options. Rent designer furniture including Project Sunday pieces to enhance the interior and sell your home faster! Click inquire to speak with a member of our design staff.",
+        "inquire_link_text": "Inquire",
+        "social_title": "Project Sunday - Interior Design",
+        "social_pic": "http://projectsunday.net/uploads/design/bowery_2.jpg",
+        "packages": [{
+            "package_name": "Simple Staging ",
+            "image": "http://projectsunday.net/uploads/staging/DSCF3737.jpg",
+            "custom": false,
+            "products": [{
+                "product_name": "Stack Bed",
+                "id": 15,
+                "slug": "stack-bed"
+            }, {
+                "product_name": "The Rockwell",
+                "id": 32,
+                "slug": "the-rockwell"
+            }, {
+                "product_name": "The Family Jewel",
+                "id": 25,
+                "slug": "the-family-jewel"
+            }]
+        }, {
+            "package_name": "Lighting Package ",
+            "image": "http://projectsunday.net/uploads/staging/DSCF3437.jpg",
+            "custom": false,
+            "products": [{
+                "product_name": "Bowery Light",
+                "id": 9,
+                "slug": "bowery-light"
+            }]
+        }, {
+            "package_name": "Bedroom Package ",
+            "image": "http://projectsunday.net/uploads/staging/DSCF3832.jpg",
+            "custom": false,
+            "products": [{
+                "product_name": "Bowery Light",
+                "id": 9,
+                "slug": "bowery-light"
+            }, {
+                "product_name": "Stack Bed",
+                "id": 15,
+                "slug": "stack-bed"
+            }, {
+                "product_name": "Trestle Bed",
+                "id": 16,
+                "slug": "trestle-bed"
+            }, {
+                "product_name": "Stack Table ",
+                "id": 12,
+                "slug": "stack-table"
+            }]
+        }]
+    }]
+}

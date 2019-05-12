@@ -1,0 +1,255 @@
+
+<section img-preloader>
+    <div class="hero-img"
+     data-preloader="image"
+     data-attach-method="bg"
+     data-src="img/about/about-hero.jpg"
+     parallax-scroll="1.5"></div>
+    <section class="hero"
+     parallax-scroll="0.7">
+        <div class="intro">
+            <h1>Furniture<br> Built <br> Forever</h1>
+        </div>
+    </section>
+    <section id="story">
+        <div class="content">
+            <div class="heading">
+                <img class="mantra" src="img/icons/mantra.svg" alt="Project Sunday Mantra">
+                <h2>We don't build<br>
+			         for a living<br>
+			         We build to live </h2>
+            </div>
+            <div class="info" >
+                <div class="grid">
+                    <div class="row" in-view="text($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:400}">
+                        <div class="col l7 offset-l5 s12 mantra-text">
+                            <p>We build to reconstruct the soul of our craft. A soul that's been reduced to dust, glued back together and placed on a shelf next to other mementos of foregone American to craftsmen eliminated by corporate demand. We build to reincarnate materials that have earned a fate better than death. Wood salvaged from a barn that once shielded a family's livelihood. Metal with legions of scars to prove its unwavering strength and resilience - materials that stood for something. <strong>WE DON'T BUILD IN CHINA.</strong> We build where we live. We build in a community comprised of talented artisans who make more than just dollars by the hour. A brotherhood that challenges us to do better work &amp; refuses to let us outsource our inspiration. Salt Lake City, Utah. We're here for a reason. We build in a space void of a front office, receptionist, or an HR department. A space that embodies our ideals and lets each of us stand behind our work. Because we don't oil our saws to build disposable, part-time bullshit. We build furniture we're proud of with warranties that can't be measured in lifetimes. <strong class="hide-mobile-only">FURNITURE BUILT FOREVER.</strong>
+                                <br />
+                                <strong class="show-mobile-only">FURNITURE BUILT FOREVER.</strong>
+                                <img class="signature" src="img/about/signature.png" alt="Project Sunday Signature">
+                                <strong>PROJECT SUNDAY</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l6 offset-l6 s12 team-intro">
+                            <!-- <img src="img/about/beehive-icon.png" /> -->
+                            <h3>{{ aboutpage.team_title }}</h3>
+                            <p>{{ aboutpage.team_copy }}</p>
+                        </div>
+                    </div>
+                    <div class="row the-team">
+                        <div class="employees">
+                            <div class="col l3 s6 employee" ng-repeat="employee in aboutpage.employees">
+                                <div team-roll title="{{employee.first_name}} {{employee.last_name}}" position="{{employee.position}}" class="t{{employee.order}} team-member"
+                                 data-preloader="image"
+                                 data-attach-method="bg"
+                                 data-src="{{employee.headshot}}"></div>
+
+                                <div class="info-box-mobile">
+                                    <h5>{{ employee.first_name }} {{ employee.last_name }}</h5>
+                                    <h6>{{ employee.position }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l9 info-box" id="info-box">
+                            <!-- LEFT BOX -->
+                            <div class="col l8 p1">
+                                <h5>Name</h5>
+                                <h6>Position</h6>
+                            </div>
+                            <!-- RIGHT BOX -->
+                            <div class="col l4 p2">
+                                <h5>Name</h5>
+                                <h6>Position</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="angle-divider"></div>
+            </div>
+    </section>
+    <section id="tools">
+        <img src="img/about/ToolofTrade.png" alt="Tools of the Trade">
+    </section>
+    <section id="hq">
+        <div class="grid">
+            <div class="row">
+                <div class="col l4 offset-l1 gallery-intro">
+                    <h3>{{ aboutpage.gallery_title }}</h3>
+                    <p>{{ aboutpage.gallery_copy }}</p>
+                </div>
+                <div class="col l7"></div>
+            </div>
+            <div class="row clearfix">
+                <div deckgrid source="photos" cardTemplate="partials/zoom-card.html" class="deckgrid gallery about-gallery img-gallery" ng-if="showGallery"></div>
+            </div>
+            <!-- gallery -->
+        </div>
+    </section>
+    <section id="capabilities">
+        <img src="img/about/chair.png" id="chair" />
+        <div class="furniture" in-view="furniture($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:300}">
+            <div class="svg-container sixty">
+                <svg class="svg h1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 428.417 393.798">
+                    <g class="protractor" fill="none" stroke="#DAD6CC" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10">
+                        <circle cx="205.046" cy="70.654" r="20.452" />
+                        <path d="M195.003 86.234c.955-4.672 5.088-8.186 10.042-8.186 4.738 0 8.725 3.214 9.9 7.58" />
+                        <path d="M191.258 86.234l-54.47 239.872 4.5 19.79L203.675 90.71" />
+                        <path d="M218.27 86.182l55.035 242.356-4.5 19.79-62.59-256.013" />
+                        <path d="M222.79 162.533H188.79" />
+                        <path d="M234.04 152.078h12.874l3.373-4.28 7.926.333.332 18.334-6.27-.015-2.812-3.918H236.29" />
+                        <path d="M188.792 152.078h31.75" />
+                        <path d="M259.787 154.606h24.5v7h-24.5z" />
+                        <path d="M241.957 188.798h184.46" />
+                        <path d="M179.62 188.798h48.997" />
+                        <path d="M2 188.798h163.388" />
+                        <path d="M204.667 163.467v228.33" />
+                        <path d="M204.667 116.123V151.8" />
+                        <path d="M204.667 2v76.052" />
+                        <path d="M142.694 297.676C105.3 275.814 80.182 235.24 80.182 188.798c0-62.48 45.467-114.342 105.12-124.305" />
+                        <path d="M258.212 303.637c-15.853 7.19-33.458 11.193-52 11.193-18.806 0-36.65-4.12-52.68-11.505" />
+                        <path d="M225.003 64.157c60.693 9.072 107.242 61.42 107.242 124.64 0 47.25-26 88.427-64.476 110.003" />
+                        <path d="M199.618 116.367c3.006-.38 3.064-.195 6.173-.195 2.292 0 2.322-.102 4.56.106" />
+                        <path d="M155.53 241.224c-13.784-13.218-22.366-31.82-22.366-52.426 0-32.376 21.185-59.805 50.45-69.178" />
+                        <path d="M244.105 250.507c-11.122 6.92-24.252 10.918-38.315 10.918-14.954 0-28.85-4.52-40.402-12.267" />
+                        <path d="M273.47 162.4c3.194 8.182 4.946 17.085 4.946 26.398 0 21.546-9.382 40.9-24.283 54.2" />
+                        <path d="M225.902 118.992c19.078 5.487 34.935 18.583 44.074 35.79" />
+                    </g>
+                </svg>
+            </div>
+            <!-- <h4>Custom Made Furniture</h4> -->
+            <h4>{{ aboutpage.capabilities[0].title }}</h4>
+            <p>{{ aboutpage.capabilities[0].copy }}</p>
+            <button ui-sref="shop" class="small-btn-white">
+                <span data-hover="{{ aboutpage.capabilities[0].link_text }}">{{ aboutpage.capabilities[0].link_text }}</span>
+            </button>
+        </div>
+        <div class="staging" in-view="staging($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:300}">
+            <div class="svg-container">
+                <svg class="svg h2" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 315.53 300.128">
+                    <g fill="none" stroke="#DAD6CC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                        <path d="M94.722 212.052c-7.965-8.13-14.37-17.794-18.73-28.508" />
+                        <path d="M157.765 238.548c-24.697 0-47.025-10.145-63.043-26.495" />
+                        <path d="M220.64 212.224c-16.007 16.25-38.265 26.323-62.875 26.323" />
+                        <path d="M239.797 182.9c-4.394 11.047-10.955 20.997-19.158 29.325" />
+                        <path d="M78.66 111.134c14.43-29.09 44.43-49.086 79.105-49.086 34.895 0 65.06 20.254 79.38 49.648" />
+                        <path d="M157.765 165.352v132.776" />
+                        <path d="M157.765 2v109.695" />
+                        <path d="M143.094 164.574L26.738 281.324" />
+                        <path d="M289.688 16.932l-93.384 94.826" />
+                        <path d="M172.95 165.155l123.083 123.082" />
+                        <path d="M26.607 18.81l92.016 92.017" />
+                        <path d="M9.858 111.88h293.237v24.752H9.858z" />
+                        <path d="M26.738 147.685h30.024" />
+                        <path d="M131.063 150.603h88.932" />
+                        <path d="M285.98 154.018h-30.023" />
+                        <path d="M69.636 174.685h17.146" />
+                        <path d="M9.858 124.257h100.174" />
+                        <path d="M286.085 136.632v27.942h-143.66" />
+                        <path d="M26.607 149.685v-13.053" />
+                        <path d="M142.425 164.574H26.607v-14.89" />
+                        <path d="M60.043 165.035L2 223.632h10.213l90.69-58.673" />
+                        <path d="M255.657 165.207l57.873 58.425h-10.213l-90.083-58.28" />
+                        <path d="M31.25 194.103h9.537" />
+                        <path d="M228.97 174.685h14.71" />
+                        <path d="M278.478 196.538h7.356" />
+                        <path d="M157.518 200.805c-13.866 0-26.42-5.622-35.504-14.71" />
+                        <path d="M157.518 100.402c11.653 0 22.378 3.97 30.897 10.632" />
+                        <path d="M148.17 22.685h19.465" />
+                        <path d="M148.17 263.185h19.465" />
+                        <path d="M193.2 185.916c-9.098 9.194-21.724 14.89-35.68 14.89" />
+                        <path d="M277.718 119.382h23.942" />
+                        <path d="M239.797 126.3h61.862" />
+                    </g>
+                </svg>
+            </div>
+            <!-- <h4>Custom Staging</h4> -->
+            <h4>{{ aboutpage.capabilities[1].title }}</h4>
+            <p>{{ aboutpage.capabilities[1].copy }}</p>
+            <button class="small-btn-white" ui-sref="portfolio">
+                <span data-hover="{{ aboutpage.capabilities[1].link_text }}">{{ aboutpage.capabilities[1].link_text }}</span>
+            </button>
+        </div>
+        <div class="installs" in-view="installs($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:300}">
+            <div class="svg-container">
+                <svg class="svg h3" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 368 369">
+                    <g fill="none" stroke="#DAD6CC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                        <path d="M88.054 60.947V224.02" />
+                        <path d="M279.666 61.997V224.02" />
+                        <path d="M79.65 239.113h208.42v68.493H79.65z" />
+                        <path d="M226.082 224.02h53.574l8.404 15.093" />
+                        <path d="M79.64 239.113l8.404-15.092h138.04" />
+                        <path d="M88.054 104.648h191.612" />
+                        <path d="M183.85 239.113v68.493" />
+                        <path d="M132.883 239.113v68.493" />
+                        <path d="M124.034 247.543v9.875" />
+                        <path d="M141.867 247.57v9.875" />
+                        <path d="M234.817 239.113v68.493" />
+                        <path d="M226.327 247.674v9.875" />
+                        <path d="M243.135 247.307v9.875" />
+                        <path d="M183.86 104.648l.14 117.517" />
+                        <path d="M184.552 195.552h95.114" />
+                        <path d="M229.67 104.648v90.904" />
+                        <path d="M229.67 157.734h49.996" />
+                        <path d="M254.668 104.648v53.086" />
+                        <path d="M85.7 60.947h196.55" />
+                        <path d="M88.054 77.613h53.813" />
+                        <path d="M88.054 89.6h16.82" />
+                        <path d="M183.22 139.245h-51.67" />
+                        <path d="M180.455 155.212h-21.738" />
+                        <path d="M78.82 285.264C54.15 259.382 39 224.338 39 185.756 39 144.5 56.32 107.29 84.084 81.002" />
+                        <path d="M260.593 307.515c-22.355 14.232-48.893 22.477-77.357 22.477-28.226 0-54.557-8.107-76.794-22.12" />
+                        <path d="M284.102 82.653c26.762 26.185 43.37 62.704 43.37 103.103 0 38.32-14.943 73.15-39.32 98.98" />
+                        <path d="M183.236 41.52c26.163 0 50.698 6.965 71.854 19.143" />
+                        <path d="M112.194 60.2c20.97-11.892 45.213-18.68 71.042-18.68" />
+                        <path d="M184 2v365" />
+                        <path d="M366 181.367H2" />
+                        <path d="M288.704 285.895l20.798 20.798" />
+                        <path d="M51.408 48.6l36.286 36.286" />
+                        <path d="M79.725 286.194l-24.22 24.22" />
+                        <path d="M313.6 52.32l-33.974 33.973" />
+                    </g>
+                </svg>
+            </div>
+            <!-- <h4>Custom Installations</h4> -->
+            <h4>{{ aboutpage.capabilities[2].title }}</h4>
+            <p>{{ aboutpage.capabilities[2].copy }}</p>
+            <button class="small-btn-white" ui-sref="design">
+                <span data-hover="{{ aboutpage.capabilities[2].link_text }}">{{ aboutpage.capabilities[2].link_text }}</span>
+            </button>
+        </div>
+        <p id="wrench">put together with more than a tiny prefabbed <span>wrench</span>.</p>
+    </section>
+    <section id="gram" class="clearfix">
+        <ul id="insta1"></ul>
+    </section>
+
+    <section id="contact">
+        <div class="contact-block">
+            <div class="copy">
+                <h4>PROJECT<br />
+      SUNDAY</h4>
+                <address>
+                    {{ contact.company_name }}
+                    <br /> {{ contact.company_address }}
+                    <br /> {{ contact.city }} {{ contact.state }}
+                </address>
+                <p>{{ contact.contact_copy }}</p>
+                <a class="small-btn"
+                 target="_self"
+                 href="mailto:info@projectsunday.net?subject=Hello Project Sunday">
+                    <span data-hover="CONTACT US">CONTACT</span>
+                </a>
+            </div>
+        </div>
+        <div class="map">
+            <img src="img/about/map.png" />
+        </div>
+    </section>
+    <div photo-slider></div>
+</section>
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

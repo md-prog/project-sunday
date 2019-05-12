@@ -1,0 +1,37 @@
+{
+  "name": "project-sunday",
+  "version": "1.0.0",
+  "description": "projectsunday.net",
+  "main": "index.html",
+  "scripts": {
+    "local": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/md-prog/project-sunday.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/md-prog/project-sunday/issues"
+  },
+  "homepage": "https://github.com/md-prog/project-sunday#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "express": "^4.16.4",
+    "gsap": "^2.1.2",
+    "normalize.css": "^3.0.2"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

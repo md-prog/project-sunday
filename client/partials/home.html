@@ -1,0 +1,366 @@
+<section img-preloader>
+    <!-- screen takeover for bed builder -->
+    <section class="bed-builder-preview">
+        <div class="macbook">
+            <div class="mac-wrapper">
+                <img src="img/home/Macbook.png" id="big-mac" />
+
+                <div id="bed-animation"
+                 png-ticker>
+                    <div class="png-frame" ng-repeat="frame in frames">
+                        <img ng-src="{{frame}}" />
+                    </div>
+                </div>                
+            </div>
+            <i ng-include="'img/icons/RO.html'" class="replay-frames"></i>
+
+        </div>
+
+        <div class="half left">
+        </div>
+        <div class="half right">
+            <i ng-include="'img/home/close.html'" id="close-bed-builder"></i>
+            <div class="text">
+                <h6>Coming Soon</h6>
+                <h1>BUILD</h1>
+                <h3>A Project Sunday Custom Bed Builder</h3>
+                <div class="bed-border"></div>
+                <p>Have you ever wondered why you can customize the look of almost anything you own these days but never really wondered why the one item you own and use the most always comes standard out of the showroom? Over here at Project Sunday we wonder this too... Your bed! Why doesn't your bed get that same special treatment that your kitchen cabinets get? Things are about to change, in the very near future Project Sunday will be launching the full immersive "Build" project. This project will allow customers to fully customize their own bed to fit their taste - options can include such things as bed size, wood type, metal type, lights, and more... welcome to the future, the future of the bed. Be sure to stay updated by clicking below or following ups on our favorite social media channels.</p>
+                <button class="big-btn" ng-click="updatesForm()">
+                    <span data-hover="Receive Updates">Receive Updates</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- updates modal -->
+        <div class="modal-overlay fade" ng-class="{'show': showForm}">
+           <div class="modal-content updates-modal">
+               <div class="form-wrap">
+                   <div class="form-title">Stay Posted</div>
+                   <button ng-click="closeForm()" class="close-modal">X CLOSE</button>
+                   <form class="updates-form" role="form" name="MailchimpSubscriptionForm" ng-controller="MailchimpSubscriptionCtrl">
+                   <!-- mailchimp fields -->
+                    <input class="hidden" type="hidden" ng-model="mailchimp.username" ng-init="mailchimp.username='projectsunday'">
+                    <input class="hidden" type="hidden" ng-model="mailchimp.dc" ng-init="mailchimp.dc='us14'">
+                    <input class="hidden" type="hidden" ng-model="mailchimp.u" ng-init="mailchimp.u='259d6dd6d7ac250df1dfc8e82'">
+                    <input class="hidden" type="hidden" ng-model="mailchimp.id" ng-init="mailchimp.id='efa8d34798'">   
+                                    
+                       <div class="form-row">
+                           <input type="email" placeholder="Email" id="email" name="email" ng-model="mailchimp.EMAIL" />
+                       </div>
+                       <div class="form-row">
+                           <button class="small-btn" id="submit"
+                            ng-disabled="MailchimpSubscriptionForm.$invalid"
+                            ng-click="addSubscription(mailchimp)">
+                               <span data-hover="Submit">Submit</span>
+                           </button>
+                       </div>
+
+                  <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->
+                  <div class="mailchimp-error" ng-show="mailchimp.result === 'error'" ng-cloak>
+                    <span ng-bind-html="mailchimp.errorMessage"></span>
+                  </div>
+
+                  <!-- Show success message if MailChimp returned successfully. -->
+                  <div class="mailchimp-success" ng-show="mailchimp.result === 'success'" ng-cloak>
+                    <span ng-bind-html="mailchimp.successMessage"></span>
+                  </div>                       
+                </form>
+               </div>
+           </div> 
+        </div>
+
+    </section>
+    <section class="hero">
+        <!-- <div class="hero-img" style="background-image:url('img/home/hero-bg.jpg')"></div> -->
+        <div class="hero-img" data-preloader="image" data-attach-method="bg" data-src="img/home/hero-bg.jpg"></div>
+        <div class="intro">
+            <ng-include src="'partials/main-lockup.html'" onload="svgLoad()"></ng-include>
+        </div>
+        <div class="mantra" in-view="mantraIn($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:250}">
+            <img class="built-lockup" src="img/icons/built-lockup2.svg" alt="Built where we live">
+            <div class="text">
+                <div class="line-wrap pad-top"><span class="top-line"></span></div>
+                <h4 class="light-txt">Furniture that lasts.</h4>
+                <h4 class="light-txt">Builders that listen.</h4>
+                <h4 class="light-txt">Design that serves.</h4>
+                <h4 class="light-txt">Come meet Project Sunday.</h4>
+                <div class="line-wrap"><span class="bottom-line"></span></div>
+            </div>
+        </div>
+        <div class="mantra-mobile">
+            <img class="built-lockup" src="img/icons/built-lockup.svg" alt="Built where we live">
+            <h3>Furniture that lasts. Builders that listen. Design that serves. Come meet Project Sunday.</h3>
+        </div>
+        <div class="grid highlights" in-view="highlights($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:200}">
+            <slick dots="true" infinite="false" responsive="breakpoints" speed=400 center-mode="false" center-padding="0" touch-move="true" slides-to-show=3 slides-to-scroll=1 next-arrow=".next-arrow" prev-arrow=".prev-arrow" css-ease="cubic-bezier(0.165, 0.84, 0.44, 1)" class="slider">
+                <div>
+                    <div class="svg-container sixty">
+                        <svg class="svg h1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 428.417 393.798">
+                            <g class="protractor" fill="none" stroke="#DAD6CC" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10">
+                                <circle cx="205.046" cy="70.654" r="20.452" />
+                                <path d="M195.003 86.234c.955-4.672 5.088-8.186 10.042-8.186 4.738 0 8.725 3.214 9.9 7.58" />
+                                <path d="M191.258 86.234l-54.47 239.872 4.5 19.79L203.675 90.71" />
+                                <path d="M218.27 86.182l55.035 242.356-4.5 19.79-62.59-256.013" />
+                                <path d="M222.79 162.533H188.79" />
+                                <path d="M234.04 152.078h12.874l3.373-4.28 7.926.333.332 18.334-6.27-.015-2.812-3.918H236.29" />
+                                <path d="M188.792 152.078h31.75" />
+                                <path d="M259.787 154.606h24.5v7h-24.5z" />
+                                <path d="M241.957 188.798h184.46" />
+                                <path d="M179.62 188.798h48.997" />
+                                <path d="M2 188.798h163.388" />
+                                <path d="M204.667 163.467v228.33" />
+                                <path d="M204.667 116.123V151.8" />
+                                <path d="M204.667 2v76.052" />
+                                <path d="M142.694 297.676C105.3 275.814 80.182 235.24 80.182 188.798c0-62.48 45.467-114.342 105.12-124.305" />
+                                <path d="M258.212 303.637c-15.853 7.19-33.458 11.193-52 11.193-18.806 0-36.65-4.12-52.68-11.505" />
+                                <path d="M225.003 64.157c60.693 9.072 107.242 61.42 107.242 124.64 0 47.25-26 88.427-64.476 110.003" />
+                                <path d="M199.618 116.367c3.006-.38 3.064-.195 6.173-.195 2.292 0 2.322-.102 4.56.106" />
+                                <path d="M155.53 241.224c-13.784-13.218-22.366-31.82-22.366-52.426 0-32.376 21.185-59.805 50.45-69.178" />
+                                <path d="M244.105 250.507c-11.122 6.92-24.252 10.918-38.315 10.918-14.954 0-28.85-4.52-40.402-12.267" />
+                                <path d="M273.47 162.4c3.194 8.182 4.946 17.085 4.946 26.398 0 21.546-9.382 40.9-24.283 54.2" />
+                                <path d="M225.902 118.992c19.078 5.487 34.935 18.583 44.074 35.79" />
+                            </g>
+                        </svg>
+                    </div>
+                    <!-- api integration -->
+                    <h6>{{ homepage.first_link_title }}</h6>
+                    <p>{{ homepage.first_link_description }}</p>
+                    <button ui-sref="shop" class="small-btn-white">
+                        <span data-hover="{{ homepage.first_link_button_text }}">{{ homepage.first_link_button_text }}</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="svg-container">
+                        <svg class="svg h2" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 368 369">
+                            <g fill="none" stroke="#DAD6CC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                <path d="M88.054 60.947V224.02" />
+                                <path d="M279.666 61.997V224.02" />
+                                <path d="M79.65 239.113h208.42v68.493H79.65z" />
+                                <path d="M226.082 224.02h53.574l8.404 15.093" />
+                                <path d="M79.64 239.113l8.404-15.092h138.04" />
+                                <path d="M88.054 104.648h191.612" />
+                                <path d="M183.85 239.113v68.493" />
+                                <path d="M132.883 239.113v68.493" />
+                                <path d="M124.034 247.543v9.875" />
+                                <path d="M141.867 247.57v9.875" />
+                                <path d="M234.817 239.113v68.493" />
+                                <path d="M226.327 247.674v9.875" />
+                                <path d="M243.135 247.307v9.875" />
+                                <path d="M183.86 104.648l.14 117.517" />
+                                <path d="M184.552 195.552h95.114" />
+                                <path d="M229.67 104.648v90.904" />
+                                <path d="M229.67 157.734h49.996" />
+                                <path d="M254.668 104.648v53.086" />
+                                <path d="M85.7 60.947h196.55" />
+                                <path d="M88.054 77.613h53.813" />
+                                <path d="M88.054 89.6h16.82" />
+                                <path d="M183.22 139.245h-51.67" />
+                                <path d="M180.455 155.212h-21.738" />
+                                <path d="M78.82 285.264C54.15 259.382 39 224.338 39 185.756 39 144.5 56.32 107.29 84.084 81.002" />
+                                <path d="M260.593 307.515c-22.355 14.232-48.893 22.477-77.357 22.477-28.226 0-54.557-8.107-76.794-22.12" />
+                                <path d="M284.102 82.653c26.762 26.185 43.37 62.704 43.37 103.103 0 38.32-14.943 73.15-39.32 98.98" />
+                                <path d="M183.236 41.52c26.163 0 50.698 6.965 71.854 19.143" />
+                                <path d="M112.194 60.2c20.97-11.892 45.213-18.68 71.042-18.68" />
+                                <path d="M184 2v365" />
+                                <path d="M366 181.367H2" />
+                                <path d="M288.704 285.895l20.798 20.798" />
+                                <path d="M51.408 48.6l36.286 36.286" />
+                                <path d="M79.725 286.194l-24.22 24.22" />
+                                <path d="M313.6 52.32l-33.974 33.973" />
+                            </g>
+                        </svg>
+                    </div>
+                    <h6>{{ homepage.second_link_title }}</h6>
+                    <p>{{ homepage.second_link_description }}</p>
+                    <button ui-sref="portfolio" class="small-btn-white">
+                        <span data-hover="{{ homepage.second_link_button_text }}">{{ homepage.second_link_button_text }}</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="svg-container">
+                        <svg class="svg h3" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 315.53 300.128">
+                            <g fill="none" stroke="#DAD6CC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                <path d="M94.722 212.052c-7.965-8.13-14.37-17.794-18.73-28.508" />
+                                <path d="M157.765 238.548c-24.697 0-47.025-10.145-63.043-26.495" />
+                                <path d="M220.64 212.224c-16.007 16.25-38.265 26.323-62.875 26.323" />
+                                <path d="M239.797 182.9c-4.394 11.047-10.955 20.997-19.158 29.325" />
+                                <path d="M78.66 111.134c14.43-29.09 44.43-49.086 79.105-49.086 34.895 0 65.06 20.254 79.38 49.648" />
+                                <path d="M157.765 165.352v132.776" />
+                                <path d="M157.765 2v109.695" />
+                                <path d="M143.094 164.574L26.738 281.324" />
+                                <path d="M289.688 16.932l-93.384 94.826" />
+                                <path d="M172.95 165.155l123.083 123.082" />
+                                <path d="M26.607 18.81l92.016 92.017" />
+                                <path d="M9.858 111.88h293.237v24.752H9.858z" />
+                                <path d="M26.738 147.685h30.024" />
+                                <path d="M131.063 150.603h88.932" />
+                                <path d="M285.98 154.018h-30.023" />
+                                <path d="M69.636 174.685h17.146" />
+                                <path d="M9.858 124.257h100.174" />
+                                <path d="M286.085 136.632v27.942h-143.66" />
+                                <path d="M26.607 149.685v-13.053" />
+                                <path d="M142.425 164.574H26.607v-14.89" />
+                                <path d="M60.043 165.035L2 223.632h10.213l90.69-58.673" />
+                                <path d="M255.657 165.207l57.873 58.425h-10.213l-90.083-58.28" />
+                                <path d="M31.25 194.103h9.537" />
+                                <path d="M228.97 174.685h14.71" />
+                                <path d="M278.478 196.538h7.356" />
+                                <path d="M157.518 200.805c-13.866 0-26.42-5.622-35.504-14.71" />
+                                <path d="M157.518 100.402c11.653 0 22.378 3.97 30.897 10.632" />
+                                <path d="M148.17 22.685h19.465" />
+                                <path d="M148.17 263.185h19.465" />
+                                <path d="M193.2 185.916c-9.098 9.194-21.724 14.89-35.68 14.89" />
+                                <path d="M277.718 119.382h23.942" />
+                                <path d="M239.797 126.3h61.862" />
+                            </g>
+                        </svg>
+                    </div>
+                    <h6>{{ homepage.third_link_title }}</h6>
+                    <p>{{ homepage.third_link_description }}</p>
+                    <button ui-sref="design" class="small-btn-white">
+                        <span data-hover="{{ homepage.third_link_button_text }}">{{ homepage.third_link_button_text }}</span>
+                    </button>
+                </div>
+            </slick>
+        </div>
+        <div class="fader"></div>
+    </section>
+    <!-- hero -->
+    <section class="home-build" in-view="buildIt($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:200}">
+        <div class="wrap">
+            <img
+             data-preloader="image"
+             data-attach-method="src"
+             data-src="img/home/build-type.png" alt="Bed Builder">
+            <h3>Project Sunday
+            <span>Custom Bed Builder</span>
+            </h3>
+            <button class="big-btn" id="launch-bed-builder">
+                <span data-hover="Learn More">Learn More</span>
+            </button>
+        </div>
+    </section>
+    <!--build -->
+    <section class="home-wall clearfix">
+        <div class="grid">
+            <div class="row">
+                <div class="col l6 left-side-col">
+                    <ul id="instafeed1"></ul>
+                    <div class="col l12">
+                        <div class="table-row contact-block">
+                            <div class="cell">
+                                <div class="bwrap">
+                                    <img class="utah-icon" src="img/icons/utah.svg" alt="Built in SLC, Utah">
+                                    <!-- api integration -->
+                                    <h6>{{ homepage.contact_title }}</h6>
+                                    <p class="pad-bot">{{ homepage.contact_description }}</p>
+                                    <button ui-sref="contact" class="small-btn" ng-if=" homepage.contact_button_text">
+                                        <span data-hover="{{ homepage.contact_button_text }}">{{ homepage.contact_button_text }}</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cell contact-img">
+                                <div class="bg-img"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-feature" img-preloader>
+                        <div class="col l6 s6"><img src="img/animated/dust-optimized.gif" alt=""></div>
+                        <div class="col l6 s6"><img src="img/home/wood-bed.jpg" alt=""></div>
+                        <div class="col l12 feature">
+                            <div class="img-wrapper"
+                             data-preloader="image"
+                             data-attach-method="bg"
+                             data-src="{{homepage.featured.featured_image}}">
+                            </div>
+                            <div class="gold-border-up">
+                                <h6>{{ homepage.featured.product_name }}</h6>
+                                <p>{{ homepage.featured.short_description }}</p>
+                                <button ui-sref="product({ slug: homepage.featured.slug })" class="small-btn">
+                                    <span data-hover="{{ homepage.featured.button_text }}">{{ homepage.featured.button_text }}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- pro-feature -->
+                </div>
+                <!-- / end first col -->
+                <div class="col l6 s12">
+                    <div class="featured-vid">
+                        <div class="video valign-wrapper">
+                            <ng-include src="'partials/play-button.html'"></ng-include>
+                            <img class="cover"
+                             data-preloader="image"
+                             data-attach-method="src" 
+                             data-src="img/home/vid-cover.jpg" alt="" ng-click="playVideo()" ng-class="{ video_showing: showVideo }">
+                            <fluidvids video="{{ video_url }}" height='380' width="640"></fluidvids>
+                        </div>
+                    </div>
+                    <div class="col l12">
+                        <div class="gold-border-up">
+                            <div class="arrow-up">
+                                <h6>{{ homepage.featured_video_title }}</h6>
+                                <p>{{ homepage.featured_video_description }}</p>
+                            </div>
+                        </div>
+                        <ul id="instafeed2"></ul>
+                        <div class="about">
+                            <img src="img/icons/furniture-forever.svg" alt="">
+                            <br/>
+                            <button ui-sref="about" class="small-btn">
+                                <span data-hover="About Us">About Us</span>
+                            </button>
+                        </div>
+                        <div class="insta-join">
+                            <div class="col l6 m6">
+                                <ul id="instafeed3"></ul>
+                            </div>
+                            <div class="col l6 m6 pad">
+                                <div class="gold-border">
+                                    <h6>{{ homepage.instagram_title }}</h6>
+                                    <p>{{ homepage.insta_copy }}</p>
+                                    <button class="small-btn" ng-click="followUs()">
+                                        <span data-hover="{{ homepage.insta_button }}">{{ homepage.insta_button }}</span>
+                                    </button>
+                                </div>
+                                <img id="sparks-gif" src="img/animated/sparks-optimized.gif" alt="Project Sunday">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- homewall -->
+    <section class="tools">
+        <slick dots="true" infinite="true" responsive="breakpoints" speed=400 center-mode="true" center-padding="0" touch-move="true" slides-to-show=3 slides-to-scroll=1 next-arrow=".next-arrow" prev-arrow=".prev-arrow" css-ease="cubic-bezier(0.165, 0.84, 0.44, 1)" class="slider" init-onload="true" data="tools">
+            <div>
+                <h2>Tools Of The Trade</h2></div>
+            <div ng-repeat="tool in tools">
+                <div class="toolbox">
+                    <img
+                     data-preloader="image"
+                     data-attach-method="src" 
+                     data-src="{{ tool.image }}" alt="">
+                    <h3>{{ tool.title }}</h3>
+                    <p>{{ tool.description }}</p>
+                </div>
+            </div>
+        </slick>
+        <button class="prev-arrow"><i class="icon-arrow-left"></i></button>
+        <button class="next-arrow"><i class="icon-arrow-right"></i></button>
+    </section>
+    <section class="map">
+        <img
+         data-preloader="image"
+         data-attach-method="src" 
+         data-src="img/home/PS_Maptype.png" id="map-text" />
+        <img
+         data-preloader="image"
+         data-attach-method="src" 
+         data-src="img/home/map-optimized.jpg" alt="Project Sunday Location">
+    </section>
+</section>
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

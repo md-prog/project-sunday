@@ -1,0 +1,44 @@
+<footer ng-controller="footerCtrl">
+   <div class="mlogo valign-wrapper">
+     <a ui-sref="home">
+      <img class="footer-lockup valign" src="img/icons/footer-lockup.svg" alt="Project Sunday - Handmade Furniture">
+      </a>
+    </div>
+    <div class="grid">
+        <div class="row">
+            <div class="col l3 valign-wrapper foot-logo">
+              <a ui-sref="home">
+                <img class="footer-lockup valign" src="img/icons/footer-lockup.svg" alt="Project Sunday - Handmade Furniture">
+              </a>
+            </div>
+            <div class="col s12 l3 m4 valign-wrapper border-right">
+                <ul class="valign">
+                    <li> <a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="design">Interior Design</a></li>
+                    <li><a ui-sref="shop">Shop</a></li>
+                    <li><a ui-sref="portfolio">Portfolio</a></li>
+                    <li><a ui-sref="about">About Us</a></li>
+                    <li><a ui-sref="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col s12 l3 m4 valign-wrapper border-right">
+                <address>
+                    {{ contact_name }}<br>
+                    {{ contact_address }}<br>
+                    {{ contact_city }}, {{ contact_state }}<br>
+                    {{ contact_hours }}<br />
+                    <a href="mailto:info@projectsunday.net">info@projectsunday.net</a>
+                </address>
+            </div>
+             <div class="col s12 l3 m4 valign-wrapper">
+                <div class=" social valign">
+                  <a ng-if="facebook_link" href="{{ facebook_link }}" target="_blank"><i class="icon-facebook"></i></a>
+            			<a ng-if="pinterest_link" href="{{ pinterest_link }}" target="_blank"><i class="icon-pinterest-circled"></i></a>
+            			<a ng-if="twitter_link" href="{{ twitter_link }}" target="_blank"><i class="icon-twitter"></i></a>
+            			<a ng-if="instagram_link" href="{{ instagram_link }}" target="_blank"><i class="icon-instagram"></i></a>
+            			<a ng-if="houzz_link" href="{{ houzz_link }}" target="_blank"><i class="icon-houzz"></i></a>
+                 </div>
+             </div>
+        </div>
+    </div>
+</footer>

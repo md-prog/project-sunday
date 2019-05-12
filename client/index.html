@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html ng-app="projectSunday" lang="en">
+
+<head>
+    <!-- seo stuff? -->
+<!--     <meta name="fragment" content="!"> -->
+    <meta charset="utf-8">
+    <title>PROJECT SUNDAY</title>
+    <base href="/">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- twitter -->
+    <meta property="og:site_name" content="Project Sunday" />
+    <meta property="og:url" content="http://projectsunday.net" />
+    <meta property="og:title" content="Project Sunday" />
+    <meta property="og:description" content="Project Sunday | Built to Live" />
+    <meta property="og:image" content="http://projectsunday.net/img/home/PS-hero.png" />
+    <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content="1147224175309753" />
+    <!-- twitter -->
+    <meta property="twitter:account_id" content="" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta property="twitter:image" content="" />
+    <meta name="twitter:url" content="http://projectsunday.net" />
+    <!-- styles -->
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="{{bodyClass}}">
+    <!--     <div id="prerenderReady">
+        <script>
+            window.prerenderReady = false;
+        </script>
+    </div> -->
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '1147224175309753',
+            xfbml: true,
+            version: 'v2.5'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+    window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+    </script>
+    <script>
+    (function(d) {
+        var f = d.getElementsByTagName('SCRIPT')[0],
+            p = d.createElement('SCRIPT');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = '//assets.pinterest.com/js/pinit.js';
+        //p['data-pin-build'] = 'parsePins';
+        // p.onload = function() {
+        //     if (!!$window.parsePins) {
+        //         renderPinItButton();
+        //     } else {
+        //         setTimeout(p.onload, 100);
+        //     }
+        // };
+        f.parentNode.insertBefore(p, f);
+
+        setTimeout(function() {
+            var pinButton = document.querySelector('.pinterest');
+            pinButton.addEventListener('click', function(e) {
+                PinUtils.pinAny();
+            })
+        }, 1000)
+    }(window.document));
+    </script>
+    <!-- <div class="center-line"></div> -->
+    <!-- border -->
+    <div class="cropmarks">
+        <div class="crop-left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.853 50.009">
+                <path class="lcrop" fill="none" stroke="#222" stroke-miterlimit="10" d="M17.148 0v50.01M0 35.965h100.853M17.148 25.536c5.363 0 9.71 3.565 9.71 10.43" />
+            </svg>
+        </div>
+        <div class="crop-right">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 52.754">
+                <path class="rcrop" fill="none" stroke="#222" stroke-miterlimit="10" d="M111.5 52.754V0M111.5 37.965H0M111.5 44.07c-2.69 0-4.868-2.79-4.868-6.23" />
+            </svg>
+        </div>
+    </div>
+    <div id="pctIndicator">
+        <h1>0</h1>
+    </div>
+    <div class="border top"></div>
+    <div class="border right"></div>
+    <div class="border bottom"></div>
+    <div class="border left"></div>
+    <div class="menu-overlay"></div>
+    <header>
+        <div show-menu class="show-menu">
+            <div class="menu-btn">
+                <div class="bars"></div>
+                <div class="bars"></div>
+                <div class="bars"></div>
+                <div class="nav-arrow">
+                    <div class="at"></div>
+                    <div class="ab"></div>
+                </div>
+            </div>
+        </div>
+        <h1 class="logo"><a ui-sref="home" class="home">Project Sunday</a></h1>
+        <div class="breadcrumbs">
+            <a href="/{{ bread }}" class="hover-crumb">
+                <span data-hover="{{ bread}}">{{ bread }}</span>
+            </a>
+            <span>{{ crumb }}</span>
+            <button ng-if="showFilters" shop-filter class="shop-filter-mobile"></button>
+        </div>
+    </header>
+    <h2 scroll-fade class="site-title">Project Sunday // Salt Lake City Utah</h2>
+    <div class="social-btns">
+        <a ng-if="facebook_link" href="{{ facebook_link }}" target="_blank"><i class="icon-facebook"></i></a>
+        <a ng-if="pinterest_link" href="{{ pinterest_link }}" target="_blank"><i class="icon-pinterest-circled"></i></a>
+        <a ng-if="twitter_link" href="{{ twitter_link }}" target="_blank"><i class="icon-twitter"></i></a>
+        <a ng-if="instagram_link" href="{{ instagram_link }}" target="_blank"><i class="icon-instagram"></i></a>
+        <a ng-if="houzz_link" href="{{ houzz_link }}" target="_blank"><i class="icon-houzz"></i></a>
+        <a href="mailto:info@projectsunday.net"><i class="icon-email"></i></a>
+    </div>
+    <div share-menu class="share">
+        <i class="icon-share"></i>
+        <a fb-share fb-title={{fb.title}} fb-link={{fb.link}} fb-img={{fb.picture}} fb-description={{fb.description}} target="_self">
+            <i class="icon-facebook"></i>
+        </a>
+        <a target="_self" class="twitter-share" href="https://twitter.com/intent/tweet?url={{fb.link}}&hashtags=projectsunday">
+            <i class="icon-twitter"></i>
+        </a>
+        <a class="pinterest" target="_self"
+         pinterest-share
+         pin-link={{fb.link}}
+         pin-text={{fb.title}}>
+             <i class="icon-pinterest-circled"></i>
+         </a>
+
+        <a target="_self" class="email-share" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site {{fb.link}}">
+            <i class="icon-email"></i>
+        </a>
+    </div>
+    <h2 scroll-fade class="latlong">
+       +  40.7500 &#176; N, 111.8833    &#176; W // 2212 S West Temple Salt Lake City Utah
+    </h2>
+    <button backto-top class="back-to-top">
+        <div class="nav-arrow">
+            <div class="at"></div>
+            <div class="ab"></div>
+        </div>
+        <div class="base"></div>
+    </button>
+    <!-- menu for mobile -->
+    <div class="mobile-menu" ng-controller="navController">
+        <div class="show-menu-mobile">
+            <div class="menu-btn-mobile mobile-close">
+                <div class="bars"></div>
+                <div class="bars" id="second-bar"></div>
+                <div class="bars"></div>
+            </div>
+        </div>
+        <!-- box container -->
+        <div class="boxes">
+            <div class="box left" ui-sref="portfolio">
+                <h5>{{ portfolio_link }}</h5>
+            </div>
+            <div class="box right" ui-sref="shop">
+                <h5>{{ shop_link }}</h5>
+            </div>
+            <div class="box left" ui-sref="design">
+                <h5>{{ staging_link }}</h5>
+            </div>
+            <div class="box right" ui-sref="about">
+                <h5>{{ about_link }}</h5>
+            </div>
+            <div class="box left" ui-sref="contact">
+                <h5>{{ contact_link }}</h5>
+            </div>
+        </div>
+        <!-- social -->
+        <div class="social-mobile">
+            <a ng-show="facebook_link" href="{{ facebook_link }}" target="_blank"><i class="icon-facebook"></i></a>
+            <a ng-show="pinterest_link" href="{{ pinterest_link }}" target="_blank"><i class="icon-pinterest-circled"></i></a>
+            <a ng-show="twitter_link" href="{{ twitter_link }}" target="_blank"><i class="icon-twitter"></i></a>
+            <a ng-show="instagram_link" href="{{ instagram_link }}" target="_blank"><i class="icon-instagram"></i></a>
+            <a ng-show="houzz_link" href="{{ houzz_link }}" target="_blank"><i class="icon-houzz"></i></a>
+            <a href="mailto:info@projectsunday.net"><i class="icon-email"></i></a>
+        </div>
+        <!-- name -->
+        <div class="name">
+            <h5>project sunday</h5>
+        </div>
+    </div>
+    <div class="folding-panel" ng-controller="navController">
+        <div class="fold-left">
+            <div class="inner-menu-btn">
+                <div class="menu-close">
+                    <div class="bars"></div>
+                    <div class="bars" id="second-bar"></div>
+                    <div class="bars"></div>
+                </div>
+            </div>
+        </div>
+        <!-- this is the left fold -->
+        <div class="fold-right">
+            <i class="icon-made-in-utah"></i>
+            <i class="icon-handmade"></i>
+        </div>
+        <!-- this is the right fold -->
+        <nav class="mainnav">
+            <a ui-sref="portfolio" draw-icon class="portfolio">{{ portfolio_link }}</a>
+            <a ui-sref="shop" draw-icon class="shop">{{ shop_link }}</a>
+            <!-- <a ui-sref="build" draw-icon class="bed-builder">Bed Builder</a> -->
+            <a ui-sref="design" draw-icon class="staging">{{ staging_link }}</a>
+            <a ui-sref="about" draw-icon class="about">{{ about_link }}</a>
+            <a ui-sref="contact" draw-icon class="contact">{{ contact_link }}</a>
+            <div class="social-btns-mobile">
+                <a ng-if="facebook_link" href="{{ facebook_link }}" target="_blank"><i class="icon-facebook"></i></a>
+                <a ng-if="pinterest_link" href="{{ pinterest_link }}" target="_blank"><i class="icon-pinterest-circled"></i></a>
+                <a ng-if="twitter_link" href="{{ twitter_link }}" target="_blank"><i class="icon-twitter"></i></a>
+                <a ng-if="instagram_link" href="{{ instagram_link }}" target="_blank"><i class="icon-instagram"></i></a>
+                <a ng-if="houzz_link" href="{{ houzz_link }}" target="_blank"><i class="icon-houzz"></i></a>
+                <a href="mailto:info@projectsunday.net"><i class="icon-email"></i></a>
+            </div>
+        </nav>
+        <div class="nav-icons hide">
+            <ng-include src="'partials/nav-icons.html'"></ng-include>
+        </div>
+    </div>
+    <a class="cd-close" href="#0"></a>
+    </div>
+    <!-- .cd-folding-panel -->
+    <!-- content -->
+    <div ui-view class="page {{pageClass}}"></div>
+    <!-- preloaders -->
+    <div id="loading-bar"></div>
+    <div id="loading-screen"></div>
+    <div id="mini-loading-screen"></div>
+    <!-- scripts -->
+    <script type="text/javascript" src="js/plugins.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-inview.js"></script>
+    <script type="text/javascript" src="js/angular/angular-cache.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-slick.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-sticky.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-deckgrid.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-mailchimp.js"></script>
+    <script async src='//api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+    <script type="text/javascript" src="js/app.min.js"></script>
+    <script type="text/javascript" src="js/directives.min.js"></script>
+    <script type="text/javascript" src="js/services.min.js"></script>
+    <script type="text/javascript" src="js/controllers.min.js"></script>
+
+</body>
+
+</html>

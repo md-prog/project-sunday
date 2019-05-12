@@ -1,0 +1,27 @@
+<div class="gallery-item">
+  <div class="tab" ui-sref="project({ slug: card.slug })">
+    <h5>
+      {{ card.title }}
+    </h5>
+  </div>
+	<figure card-flip>
+		<div class="wrap">
+			<div class="card valign-wrapper">
+        <!-- borders -->
+        <div class="card-border card-top"></div>
+        <div class="card-border card-right"></div>
+        <div class="card-border card-bottom"></div>
+        <div class="card-border card-left"></div>
+
+				<div class="valign backside">
+					<h6>{{card.title}}</h6>
+					<p>{{card.description}}</p>
+					<button class="small-btn" ui-sref="project({ slug: card.slug })">
+						<span data-hover="View Now">View Now</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		 <img src="" ng-src="{{card.src}}">
+	</figure>
+</div>

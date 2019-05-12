@@ -1,0 +1,124 @@
+<section img-preloader>
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-img"
+             data-preloader="image"
+             data-attach-method="bg"
+             data-src="img/home/hero-bg.jpg"></div>
+            <slick ng-if="featuredProducts.length" autoplay="true" autoplay-speed="6000" dots="true" infinite="true" speed="900" touch-move="true" slides-to-show=1 slides-to-scroll=1 css-ease="cubic-bezier(0.6, 0, 0.1, 1)" class="slider" init-onload="true" data="featuredProducts">
+                <div class="listItem" ng-repeat="product in featuredProducts" repeat-complete="broadcast()">
+                    <div class="bg-image"
+                     data-preloader="image"
+                     data-attach-method="bg"
+                     data-src="{{product.hero_image}}"></div>
+                    <div class="title">
+                        <span class="feature-title">Featured Product</span>
+                        <h3>{{ product.product_name }}</h3>
+                        <button ui-sref="product({ slug: product.slug})" class="portfolio-btn">
+                            View Now
+                        </button>
+                    </div>
+                </div>
+            </slick>
+            <div ng-if="featuredProducts.length" class="numbers"></div>
+        </div>
+    </section>
+    <section id="locals">
+        <img class="locals-icon" src="img/icons/locals-only.svg" alt="">
+        <div class="gold-border">
+            <h6>{{ shop.locals_title }}</h6>
+            <p>{{ shop.locals_copy }}</p>
+        </div>
+    </section>
+    <section id="product-grid">
+        <div class="grid">
+            <!-- Desktop row -->
+            <div class="row hide-tablet-down">
+                <div card-flip class="col l4 m6 s12" ng-repeat="product in products | limitTo: limit | filter: filterProducts as results">
+                    <img src="img/shop/locals-badge.png" id="locals-badge" ng-if="product.local" />
+                    <div class="wrap">
+                        <div class="card valign-wrapper">
+                            <div class="valign">
+                                <h6>{{product.product_name}}</h6>
+                                <p>{{product.short_description}}</p>
+                                <button ui-sref="product({ slug: product.slug })" class="small-btn">
+                                    <span data-hover="View Now">View Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <img ng-src="{{ product.thumbnail }}">
+                </div>
+            </div>
+            <!-- Desktop row -->
+            <!-- Mobile row -->
+            <div class="row show-tablet-down">
+                <div class="col m6 s12" ng-repeat="product in products | limitTo: limit | filter: filterProducts">
+                    <a ui-sref="product({ slug: product.slug })">
+                        <img src="img/shop/locals-badge.png" id="locals-badge" ng-if="product.local" />
+                        <div class="wrap">
+                            <div class="tab">
+                                <h5>{{ product.product_name }}</h5>
+                            </div>
+                            <div class="valign-wrapper">
+                            </div>
+                        </div>
+                        <img ng-src="{{ product.thumbnail }}" imageOnLoad>
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile row -->
+            <button ng-click="loadMore()" ng-hide="results.length === products.length" class="small-btn loadmore">
+                <span data-hover="Load More">Load More</span>
+            </button>
+        </div>
+    </section>
+<!--     <div class="filter-box">
+        <button shop-filter class="box"></button>
+    </div> -->
+    <section shop-filter id="filters">
+        <ul>
+            <li>
+                <input type="radio" id="all" name="radio" ng-model="catSort.cat" ng-click="showAll()" name="all" value="" />
+                <label for="all"><span></span>All</label>
+            </li>
+            <li>
+                <input type="radio" id="dining" name="radio" ng-model="catSort.cat" ng-click="filtered('dining')" name="dining" value="dining" />
+                <label for="dining"><span></span>Dining</label>
+            </li>
+            <li>
+                <input type="radio" id="kitchen" name="radio" ng-model="catSort.cat" ng-click="filtered('kitchen')" name="kitchen" value="kitchen" />
+                <label for="kitchen"><span></span>kitchen</label>
+            </li>
+            <li>
+                <input type="radio" id="living" name="radio" ng-model="catSort.cat" ng-click="filtered('living')" name="living" value="living" />
+                <label for="living"><span></span>Living</label>
+            </li>
+            <li>
+                <input type="radio" id="bedroom" name="radio" ng-model="catSort.cat" ng-click="filtered('bedroom')" name="bedroom" value="bedroom" />
+                <label for="bedroom"><span></span>Bedroom</label>
+            </li>
+            <li>
+                <input type="radio" id="bath" name="radio" ng-model="catSort.cat" ng-click="filtered('bath')" name="bath" value="bath" />
+                <label for="bath"><span></span>Bath</label>
+            </li>
+            <li>
+                <input type="radio" id="local" name="radio" ng-model="catSort.cat" ng-click="filtered('locals')" name="locals" value="locals" />
+                <label for="local"><span></span>Locals</label>
+            </li>
+            <li>
+                <input type="radio" id="lighting" name="radio" ng-model="catSort.cat" ng-click="filtered('lighting')" name="lighting" value="lighting" />
+                <label for="lighting"><span></span>lighting</label>
+            </li>
+            <li>
+                <input type="radio" id="lifestyle" name="radio" ng-model="catSort.cat" ng-click="filtered('lifestyle')" name="lifestyle" value="lifestyle" />
+                <label for="lifestyle"><span></span>lifestyle</label>
+            </li>
+        </ul>
+    </section>
+</section>
+    <div class="filter-box">
+        <button shop-filter class="box"></button>
+    </div>
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

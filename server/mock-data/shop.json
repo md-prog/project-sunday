@@ -1,0 +1,13 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "page_title": "Shop",
+        "locals_title": "Locals Only Items",
+        "locals_copy": "You may notice some items in our collection will display the above badge on its product thumbnail and product page. This badge simply means the product is only available for local pickup or delivery. Some of our products, due to their nature, are unavailable to ship.",
+        "social_title": "Project Sunday - Shop",
+        "social_pic": "http://projectsunday.net/uploads/shop/makore_dupe.jpg",
+        "products": []
+    }]
+}

@@ -1,0 +1,26 @@
+{
+    "count": 10,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "name": "Kitchen"
+    }, {
+        "name": "Lighting "
+    }, {
+        "name": "Lifestyle"
+    }, {
+        "name": "Bedroom"
+    }, {
+        "name": "Locals Only"
+    }, {
+        "name": "Office"
+    }, {
+        "name": "Commercial"
+    }, {
+        "name": "Living"
+    }, {
+        "name": "Dining"
+    }, {
+        "name": "Featured Artist"
+    }]
+}

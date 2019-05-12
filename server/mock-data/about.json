@@ -1,0 +1,114 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "page_title": "About",
+        "team_title": "Meet the Team",
+        "team_copy": "The men and women who make up Project Sunday. They are the ones responsible for all the style, the noise, and the sawdust that goes along with each piece we make. Email info@projectsunday.net for information on internship opportunities!",
+        "employees": [{
+            "order": "1",
+            "first_name": "Kevin ",
+            "last_name": "Jateff",
+            "position": "Owner // Accounts Manager",
+            "headshot": "http://projectsunday.net/uploads/staff_photos/DSCF3875_8SuPyaF.jpg"
+        }, {
+            "order": "2",
+            "first_name": "Riley",
+            "last_name": "Ridd",
+            "position": "Interior and Furniture Design",
+            "headshot": "http://projectsunday.net/uploads/staff_photos/01_O8h847X.jpg"
+        }, {
+            "order": "3",
+            "first_name": "Matthew",
+            "last_name": "Davis",
+            "position": "Project Lead",
+            "headshot": "http://projectsunday.net/uploads/staff_photos/DSCF3767_1iV8fTp.jpg"
+        }, {
+            "order": "5",
+            "first_name": "Matthew",
+            "last_name": "Smith",
+            "position": "Project Lead",
+            "headshot": "http://projectsunday.net/uploads/staff_photos/_JWP9635.jpg"
+        }, {
+            "order": "6",
+            "first_name": "Chance",
+            "last_name": "Hutchinson",
+            "position": "Fabricator / Shop Maintenance",
+            "headshot": "http://projectsunday.net/uploads/staff_photos/_JWP9558.jpg"
+        }],
+        "gallery_title": "The Shop. A work in Progress",
+        "gallery_copy": "Photos into the lifestyle and workplace of Project Sunday. Visit the showroom and see what we have in stock. Also discounted prototype designs only available in person.",
+        "photos": [{
+            "id": 1,
+            "caption": "Project Sunday Doggy",
+            "image": "http://projectsunday.net/uploads/about_gallery/Layer_22x_A7jI4Kv.jpg",
+            "image_size": "902x884",
+            "medium_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/Layer_22x_A7jI4Kv.jpg.1000x0_q85_crop-scale.jpg",
+                "size": "902x884"
+            },
+            "small_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/Layer_22x_A7jI4Kv.jpg.600x0_q85_crop-scale.jpg",
+                "size": "600x588"
+            }
+        }, {
+            "id": 3,
+            "caption": "Tools Of The Trade",
+            "image": "http://projectsunday.net/uploads/about_gallery/Layer_4.jpg",
+            "image_size": "902x884",
+            "medium_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/Layer_4.jpg.1000x0_q85_crop-scale.jpg",
+                "size": "902x884"
+            },
+            "small_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/Layer_4.jpg.600x0_q85_crop-scale.jpg",
+                "size": "600x588"
+            }
+        }, {
+            "id": 4,
+            "caption": "Project Sunday Materials  ",
+            "image": "http://projectsunday.net/uploads/about_gallery/woodnarrow.jpg",
+            "image_size": "902x578",
+            "medium_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/woodnarrow.jpg.1000x0_q85_crop-scale.jpg",
+                "size": "902x578"
+            },
+            "small_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/woodnarrow.jpg.600x0_q85_crop-scale.jpg",
+                "size": "600x384"
+            }
+        }, {
+            "id": 2,
+            "caption": "Project Sunday Materials ",
+            "image": "http://projectsunday.net/uploads/about_gallery/tools.jpg",
+            "image_size": "902x884",
+            "medium_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/tools.jpg.1000x0_q85_crop-scale.jpg",
+                "size": "902x884"
+            },
+            "small_image": {
+                "url": "http://projectsunday.net/uploads/about_gallery/tools.jpg.600x0_q85_crop-scale.jpg",
+                "size": "600x588"
+            }
+        }],
+        "capabilities": [{
+            "order": "1",
+            "title": "Handmade Furniture",
+            "copy": "Shop our catalogue of handmade furniture. Designs for every room of your home.",
+            "link_text": "Shop"
+        }, {
+            "order": "2",
+            "title": "Custom Builds",
+            "copy": "Custom woodworking that you can't find in stores. This is a more hands on approach to furniture.",
+            "link_text": "Build"
+        }, {
+            "order": "3",
+            "title": "Interior Design",
+            "copy": "Experienced in residential and commercial design, we can help you create your perfect space.",
+            "link_text": "Design"
+        }],
+        "social_title": "About Project Sunday",
+        "social_pic": "http://projectsunday.net/uploads/about_gallery/tools-banner.png"
+    }]
+}

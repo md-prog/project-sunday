@@ -1,0 +1,71 @@
+
+<section img-preloader>
+    <section class="hero">
+        <div class="hero-img" data-preloader="image" data-attach-method="bg" data-src="img/staging/hero.jpg"
+         parallax-scroll="0.8"></div>
+        <h1>Interior</h1>
+        <h1>Design</h1>
+        <i class="icon-made-in-utah"></i>
+    </section>
+    <div sticky offset="0" media-query="min-width: 768px" class="inquire-btn">
+        <button scroll-to-anchor class="order-btn"><span data-hover="{{ staging.inquire_link_text }}">{{ staging.inquire_link_text }}</span></button>
+    </div>
+    <!-- for mobile -->
+    <button scroll-to-anchor class="mobile-inquire-btn show-tablet-down">
+        <div class="arrow"></div>{{ staging.inquire_link_text }}</button>
+    <section id="blurb">
+        <div class="grid">
+            <div class="row">
+                <div class="col l2 s12 txt-center">
+                    <img src="img/icons/staging.svg" alt="">
+                </div>
+                <div class="col l7 s12">
+                    <h5>{{ staging.headline }}</h5>
+                    <p>{{ staging.description }}</p>
+                </div>
+                <div class="col l3 s12 txt-center">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pieces">
+        <div class="grid">
+            <div class="row" ng-class="{hover: mouseover}" ng-repeat="package in packages track by $index" ng-mouseenter="mouseover = true" ng-mouseleave="mouseover = false" ng-class-odd="'odd-row'" ng-class-even="'even-row'">
+                <!-- borders -->
+                <div ng-class-odd="'img-left'" ng-class-even="'img-right'">
+                    <img ng-src="{{ package.image }}" alt="">
+                </div>
+                <div class="valign-wrapper">
+                    <div class="valign">
+                        <img src="img/icons/table.svg" alt="">
+                        <h6>{{ $index + 1 | digits }} // {{ package.package_name }}</h6>
+                        <ul>
+                            <li ng-if="package.custom"><a href="#" scroll-to-anchor>Custom Design - Inquire</a></li>
+                            <li ng-if="!package.custom" ng-repeat="item in package.products"><a ui-sref="product({ slug: item.slug })">{{ item.product_name }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- grid -->
+    </section>
+    <section id="staging-form">
+        <div class="wrapper clearfix">
+            <h6 id="anchor">Interested in interior design or home staging? Submit an inquiry below.</h6>
+            <form name="form" role="form" ng-submit="requestStaging()" novalidate>
+                <input type="text" placeholder="Name" id="name" name="name" ng-model="stagingForm.name" required="" ng-class="{'error': form.$submitted && form.name.$error.required }" />
+                <input type="email" placeholder="Email" id="email" name="email" ng-model="stagingForm.email" required="" ng-class="{'error': form.$submitted && form.email.$error.required }" />
+                <input type="text" placeholder="Street Address" id="address" name="address" ng-model="stagingForm.address" required="" ng-class="{'error': form.$submitted && form.address.$error.required }" />
+                <input type="text" placeholder="City" id="city" name="city" class="fifty-left" ng-model="stagingForm.city" required="" ng-class="{'error': form.$submitted && form.city.$error.required }" />
+                <input type="text" placeholder="State or Region" id="state" name="state" class="fifty-right" ng-model="stagingForm.state" required="" ng-class="{'error': form.$submitted && form.state.$error.required }" />
+                <input type="text" placeholder="Square Footage of Home" id="footage" name="footage" class="fifty-left" ng-model="stagingForm.footage" required="" ng-class="{'error': form.$submitted && form.footage.$error.required }" />
+                <input type="text" placeholder="Est. Design Budget" id="price" name="price" class="fifty-right" ng-model="stagingForm.price" required="" ng-class="{'error': form.$submitted && form.price.$error.required }" />
+                <button class="small-btn" id="submit" ng-submit>
+                    <span data-hover="Submit">Submit</span>
+                </button>
+            </form>
+        </div>
+    </section>
+</section>
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

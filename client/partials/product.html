@@ -1,0 +1,301 @@
+<section img-preloader>
+    <section class="hero" ng-cloak>
+        <!-- <div id="fixed-hero" class="hero-img" style="background-image:url({{ product.hero_image }});">
+    </div> -->
+        <div
+         parallax-scroll="1.0" id="fixed-hero" class="hero-img" style="background-image:url({{ product.hero_image }});"
+         data-preloader="image"
+         data-attach-method="bg"
+         data-src="{{product.hero_image}}"
+         >
+        </div>
+    </section>
+    <section id="details">
+        <div class="grid">
+            <div class="table-row">
+                <div class="cell bk-color pad">
+                    <h2>{{ product.product_name }}</h2>
+                    <div class="content">
+                        <h5>{{ product.product_headline }}</h5>
+                        <p>{{ product.product_copy }}</p>
+                    </div>
+                    <div class="row options" in-view="options($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:0}" ng-show="hasOptions">
+                        <div class="col l12 s12">
+                            <h5>{{ product.options_text }}</h5>
+                        </div>
+                        <div class="col l12 s12 boxes">
+                            <div class="box" ng-if="product.wood_species.length > 0">
+                                <div class="svg-wrapper" ng-include="'img/icons/BlockofWood.html'"></div>
+                                <h6>wood species</h6>
+                                <ul>
+                                    <li ng-repeat="i in product.wood_species">{{i.name}}</li>
+                                </ul>
+                            </div>
+                            <div class="box" ng-if="product.wood_finish.length > 0">
+                                <div class="svg-wrapper" ng-include="'img/icons/Dripper.html'"></div>
+                                <h6>wood finish</h6>
+                                <ul>
+                                    <li ng-repeat="i in product.wood_finish">{{i.name}}</li>
+                                </ul>
+                            </div>
+                            <div class="box" ng-if="product.base_colors.length > 0">
+                                <div class="svg-wrapper" ng-include="'img/icons/Bucket.html'"></div>
+                                <h6>base colors</h6>
+                                <ul>
+                                    <li ng-repeat="i in product.base_colors">{{i.name}}</li>
+                                </ul>
+                            </div>
+                            <div class="box" ng-if="product.sizes.length > 0">
+                                <div class="svg-wrapper" ng-include="'img/icons/Ruler.html'"></div>
+                                <h6>dimensions</h6>
+                                <ul>
+                                    <li ng-repeat="i in product.sizes">
+                                        {{i.length}}
+                                        <span ng-if="i.length && i.height">x</span> {{i.height}}
+                                        <span ng-if="i.height && i.depth || i.depth && i.length">x</span> {{i.depth}}
+                                        <span ng-if="i.width && i.depth || i.width && i.height || i.length && i.width">x</span> {{i.width}}
+                                    </li>
+                                    <li>see full dimensions below</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote ng-if="product.blockquote_text">
+                        {{ product.blockquote_text }}
+                        <cite>{{ product.blockquote_source }}</cite>
+                    </blockquote>
+                </div>
+                <div id="material-slider" class="cell bk-color">
+                    <h6 class="title">materials</h6>
+                    <slick dots="false" infinite="true" responsive="breakpoints" speed=400 touch-move="true" slides-to-show=1 slides-to-scroll=1 next-arrow=".next-arrow" prev-arrow=".prev-arrow" css-ease="cubic-bezier(0.165, 0.84, 0.44, 1)" class="slider" init-onload="true" data="product.materials_used">
+                        <div ng-repeat="item in product.materials_used" class="slider-item">
+                            <div class="image"
+                             data-preloader="image"
+                             data-attach-method="bg"
+                             data-src="{{item.image}}"></div>
+                            <figure>
+                                <h3>{{ item.name }}</h3>
+                                <p>{{ item.copy }}</p>
+                            </figure>
+                        </div>
+                    </slick>
+                    <button class="prev-arrow" ng-if="product.materials_used.length > 1"><i class="icon-arrow-left"></i></button>
+                    <button class="next-arrow" ng-if="product.materials_used.length > 1"><i class="icon-arrow-right"></i></button>
+                    <h6 class="materials" ng-if="product.materials_used.length > 0">materials available</h6>
+                </div>
+            </div>
+        </div>
+        <div class="sec-bg">
+            <div class="gold-bar"></div>
+        </div>
+    </section>
+    <section id="pro-gallery" ng-if="product.images.length > 0">
+        <div class="grid">
+            <div deckgrid source="photos" limit="limit" cardTemplate="partials/zoom-card.html" class="deckgrid gallery img-gallery" ng-if="showGallery"></div>
+            <!-- gallery -->
+        </div>
+    </section>
+    <section id="specs">
+        <div class="grid" id="dimensions-waypoint">
+            <div class="table-row" in-view="specs($index, $inview, $inviewpart, $event)">
+                <div class="cell quarter">
+                    <svg class="compass" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 428.417 393.798">
+                        <g class="protractor" fill="none" stroke="#dad6cc" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10">
+                            <circle cx="205.046" cy="70.654" r="20.452" />
+                            <path d="M195.003 86.234c.955-4.672 5.088-8.186 10.042-8.186 4.738 0 8.725 3.214 9.9 7.58" />
+                            <path d="M191.258 86.234l-54.47 239.872 4.5 19.79L203.675 90.71" />
+                            <path d="M218.27 86.182l55.035 242.356-4.5 19.79-62.59-256.013" />
+                            <path d="M222.79 162.533H188.79" />
+                            <path d="M234.04 152.078h12.874l3.373-4.28 7.926.333.332 18.334-6.27-.015-2.812-3.918H236.29" />
+                            <path d="M188.792 152.078h31.75" />
+                            <path d="M259.787 154.606h24.5v7h-24.5z" />
+                            <path d="M241.957 188.798h184.46" />
+                            <path d="M179.62 188.798h48.997" />
+                            <path d="M2 188.798h163.388" />
+                            <path d="M204.667 163.467v228.33" />
+                            <path d="M204.667 116.123V151.8" />
+                            <path d="M204.667 2v76.052" />
+                            <path d="M142.694 297.676C105.3 275.814 80.182 235.24 80.182 188.798c0-62.48 45.467-114.342 105.12-124.305" />
+                            <path d="M258.212 303.637c-15.853 7.19-33.458 11.193-52 11.193-18.806 0-36.65-4.12-52.68-11.505" />
+                            <path d="M225.003 64.157c60.693 9.072 107.242 61.42 107.242 124.64 0 47.25-26 88.427-64.476 110.003" />
+                            <path d="M199.618 116.367c3.006-.38 3.064-.195 6.173-.195 2.292 0 2.322-.102 4.56.106" />
+                            <path d="M155.53 241.224c-13.784-13.218-22.366-31.82-22.366-52.426 0-32.376 21.185-59.805 50.45-69.178" />
+                            <path d="M244.105 250.507c-11.122 6.92-24.252 10.918-38.315 10.918-14.954 0-28.85-4.52-40.402-12.267" />
+                            <path d="M273.47 162.4c3.194 8.182 4.946 17.085 4.946 26.398 0 21.546-9.382 40.9-24.283 54.2" />
+                            <path d="M225.902 118.992c19.078 5.487 34.935 18.583 44.074 35.79" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="cell quarter">
+                    <h3>{{ product.product_name }}</h3>
+                    <p>{{ product.dimensions_copy }}</p>
+                    <!-- if product has options -->
+                    <div class="options" ng-if="product.sizes.length > 1">
+                        <ul>
+                            <li ng-class="{'selected': selectedOption == option}" ng-repeat="option in optionDimensions" ng-click="pickOption(option)">
+                                <span class="option-border top"></span>
+                                <span class="option-border right"></span>
+                                <span class="option-border bottom"></span>
+                                <span class="option-border left"></span> {{ option.name }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- if product has no options -->
+                <div class="cell dimensions" ng-if="!hasOptions">
+                    <div ng-if="product.dimensions_height" class="height valign-wrapper"><span class="valign">{{ product.dimensions_height }}"</span></div>
+                    <div ng-if="product.dimensions_width" class="width valign-wrapper"><span class="valign">{{ product.dimensions_width }}"</span></div>
+                    <div ng-if="product.dimensions_depth" class="depth valign-wrapper"><span class="valign">{{ product.dimensions_depth }}"</span></div>
+                    <div ng-if="product.dimensions_length" class="length valign-wrapper"><span class="valign">{{ product.dimensions_length }}"</span></div>
+                </div>
+                <!-- if product has options -->
+                <div class="cell dimensions" ng-if="hasOptions">
+                    <div ng-if="selectedOption.height" class="height valign-wrapper"><span class="valign">{{ selectedOption.height }}"</span></div>
+                    <div ng-if="selectedOption.width" class="width valign-wrapper"><span class="valign">{{ selectedOption.width }}"</span></div>
+                    <div ng-if="selectedOption.depth" class="depth valign-wrapper"><span class="valign">{{ selectedOption.depth }}"</span></div>
+                    <div ng-if="selectedOption.length" class="length valign-wrapper"><span class="valign">{{ selectedOption.length }}"</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="featured-vid" ng-if="product.video">
+        <div class="grid">
+            <div class="table-row">
+                <div class="cell video">
+                    <ng-include src="'partials/play-button.html'"></ng-include>
+                    <img class="cover" ng-src="{{ product.video_cover }}" alt="" ng-click="playVideo()" ng-class="{ video_showing: showVideo }">
+                    <fluidvids video="{{ video_url }}" height='380' width="640"></fluidvids>
+                </div>
+                <div class="cell pad">
+                    <h3>{{ product.video_title }}</h3>
+                    <p>{{ product.video_copy }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="order-cta">
+        <div class="cta">
+            <h2>{{ product.product_name }}</h2>
+            <h5 ng-if="product.subtitle">{{ product.subtitle }}</h5>
+            <button class="order-btn" ng-click="orderForm()">
+                <span data-hover="Order Now">Order Now</span>
+            </button>
+        </div>
+    </section>
+    <section id="prior-next-products">
+        <h5>ADDITIONAL PRODUCTS</h5>
+        <div class="row">
+            <!-- PRIOR PRODUCT -->
+            <div card-flip class="col l4 m6 s12">
+                <img src="img/shop/locals-badge.png" id="locals-badge" ng-if="prior.local" />
+                <div class="wrap">
+                    <div class="tab">
+                        <h5 ui-sref="product({slug:prior.slug})">
+                        {{ prior.product_name }}
+                    </h5>
+                    </div>
+                    <div class="card valign-wrapper">
+                        <div class="valign">
+                            <h4>{{prior.product_name}}</h4>
+                            <button ui-sref="product({ slug: prior.slug })" class="small-btn">
+                                <span data-hover="View Now">View Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <img ng-src="{{ prior.thumbnail }}">
+            </div>
+            <!-- NEXT PRODUCT -->
+            <div card-flip class="col l4 m6 s12">
+                <img src="img/shop/locals-badge.png" id="locals-badge" ng-if="next.local" />
+                <div class="wrap">
+                    <div class="tab">
+                        <h5 ui-sref="product({slug:next.slug})">
+                        {{ next.product_name }}
+                    </h5>
+                    </div>
+                    <div class="card valign-wrapper">
+                        <div class="valign">
+                            <h4>{{next.product_name}}</h4>
+                            <button ui-sref="product({ slug: next.slug })" class="small-btn">
+                                <span data-hover="View Now">View Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <img ng-src="{{ next.thumbnail }}">
+            </div>
+        </div>
+    </section>
+    <div sticky offset="{{priceOffset}}" class="order-box">
+        <div class="cost"><span>{{ product.starting_price }}</span><span class="price">${{ product.price }}</span></div>
+        <button class="order-btn" ng-click="orderForm()"><span data-hover="Order Now">Order Now</span></button>
+    </div>
+    <!-- gallery -->
+    <div photo-slider></div>
+    <!-- order-form modal -->
+    <div ng-class="{ 'show': showForm }" class="modal-overlay fade">
+        <div class="modal-content order-modal clearfix">
+            <div class="form-wrap">
+                <div class="form-title">
+                    <h5>{{ product.product_name }} - <span class="price">${{ product.price }}</span></h5>
+                </div>
+                <button ng-click=" closeOrderForm()" class="close-modal">X CLOSE</button>
+                <form class="order-form" role="form" name="form" ng-submit="orderProduct()" novalidate="">
+                    <input type="hidden" name="product" ng-value=" productForm.product" value="{{ product.id }}" />
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name" id="first-name" name="first_name" ng-model="productForm.first_name" class="fifty-left">
+                        <input type="text" placeholder="Last Name" id="last-name" name="last_name" ng-model="productForm.last_name" class="fifty-right">
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="Email" id="email" name="email" ng-model="productForm.email" class="fifty-left">
+                        <input type="tel" placeholder="Phone" id="phone" name="phone" ng-model="productForm.phone" class="fifty-right">
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="Street Address" id="address" name="address" ng-model="productForm.address">
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="State or Region" id="state" class="fifty-left" name="state" ng-model="productForm.state">
+                        <input type="text" placeholder="City" id="city" class="fifty-right" name="city" ng-model="productForm.city">
+                    </div>
+                    <div class="form-row">
+                        <!-- wood species -->
+                        <span id="select-span" ng-if="product.wood_species.length > 0">
+                      <h6>Wood Species</h6>
+                      <select name="wood_species" name="wood_species" ng-model="productForm.wood_species">
+                        <option ng-repeat="i in product.wood_species">{{ i.name }}</option></li>
+                      </select>
+                      </span>
+                        <!-- wood finish -->
+                        <span id="select-span" ng-if="product.wood_finish.length > 0">
+                      <h6>Wood Finish</h6>
+                      <select name="wood_finish" name="wood_finish" ng-model="productForm.wood_finish">
+                        <option ng-repeat="i in product.wood_finish">{{ i.name }}</option></li>
+                      </select>
+                      </span>
+                        <!-- base colors -->
+                        <span id="select-span" ng-if="product.base_colors.length > 0">
+                      <h6>Base Colors</h6>
+                      <select name="base_color" name="base_color" ng-model="productForm.base_color">
+                        <option ng-repeat="i in product.base_colors">{{ i.name }}</option></li>
+                      </select>
+                      </span>
+                        <!-- sizes -->
+                        <span id="select-span" ng-if="product.sizes.length > 0">
+                      <h6>Sizes</h6>
+                      <select name="size" name="size" ng-model="productForm.size">
+                        <option ng-repeat="i in product.sizes">{{ i.name }}</option></li>
+                      </select>
+                      </span>
+                    </div>
+                    <div class="form-row">
+                        <button class="small-btn" id="submit" ng-submit>
+                            <span data-hover="Submit">Submit</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

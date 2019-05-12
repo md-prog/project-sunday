@@ -1,0 +1,125 @@
+<section img-preloader>
+	<section parallax-scroll="1" class="hero"
+	 data-preloader="image"
+	 data-attach-method="bg"
+	 data-src="{{ project.hero_image }}">
+	</section>
+	<section id="project-details">
+		<div class="grid">
+			<div class="row">
+				<div class="col l2 s12 details">
+					<h4>Project Details</h4>
+					<h6 data-content="01 // client"><a href="{{ project.client_website }}" target="_blank">{{ project.client_name }}</a></h6>
+					<h6 data-content="02 // project">{{ project.project_type }}</h6>
+					<h6 data-content="03 // date">{{ project.project_date | date: 'MMMM yyyy'}}</h6>
+					<h6 data-content="04 // location">{{ project.project_location }}</h6>
+
+	        <!-- this is where we will drop the mapbox directive -->
+	        		<div class="mapbox-holder">
+	        			<div class="fake-div"></div>
+	        			<div id="mapbox"></div>
+	        		</div>
+
+				</div>
+				<div class="col l7 s12 info">
+
+						<h2>{{ project.project_name }}</h2>
+							<h5>{{ project.project_headline }}</h5>
+							<p>{{ project.project_copy }}</p>
+
+						<blockquote ng-if="project.blockquote_text">
+						{{ project.blockquote_text }}
+						<cite>{{ project.blockquote_source }}</cite>
+					  </blockquote>
+
+				</div>
+				<div class="col l3 s12 materials">
+					<h3>Materials Used</h3>
+						<ul>
+						<li ng-repeat="item in project.materials_used">{{ item.name }}</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="project-gallery">
+		<div class="grid">
+			<div deckgrid source="photos" cardTemplate="partials/zoom-card.html" class="deckgrid gallery img-gallery" ng-if="showGallery"></div>
+		</div>
+	</section>
+
+
+	<section id="featured-vid" ng-if="project.video_id">
+		<div class="grid">
+			<div class="table-row">
+				<div class="cell video">
+				<ng-include src="'partials/play-button.html'"></ng-include>
+				<img class="cover" ng-src="{{ project.video_cover }}" alt="" ng-click="playVideo()" ng-class="{ video_showing: showVideo }">
+				<fluidvids video="{{ video_url }}" height='380' width="640"></fluidvids>
+				</div>
+				<div class="cell pad">
+					<h3>{{ project.video_title }}</h3>
+					<p>{{ project.video_description }}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="prior-next-projects">
+		<h5>ADDITIONAL PROJECTS</h5>
+		<div class="row">
+			<!-- PRIOR PROJECT -->
+			<div card-flip class="col l4 m6 s12">
+				<div class="wrap">
+					<div class="tab">
+						<h5 ui-sref="project({slug:prior.slug})">
+							{{ prior.project_name }}
+						</h5>
+					</div>
+					<div class="card valign-wrapper">
+						<div class="valign">
+							<h4>{{prior.project_name}}</h4>
+							<button ui-sref="project({ slug: prior.slug })" class="small-btn">
+							<span data-hover="View Now">View Now</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<img
+				 data-preloader="image"
+				 data-attach-method="src"
+				 data-src="{{prior.thumbnail}}">
+			</div>
+			<!-- NEXT PROJECT -->
+			<div card-flip class="col l4 m6 s12">
+				<div class="wrap">
+					<div class="tab">
+						<h5 ui-sref="project({slug:next.slug})">
+							{{ next.project_name }}
+						</h5>
+					</div>
+					<div class="card valign-wrapper">
+						<div class="valign">
+							<h4>{{next.project_name}}</h4>
+							<button ui-sref="project({ slug: next.slug })" class="small-btn">
+							<span data-hover="View Now">View Now</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<img
+				 data-preloader="image"
+				 data-attach-method="src"
+				 data-src="{{next.thumbnail}}">
+			</div>
+		</div>
+
+	</section>
+
+	<div photo-slider></div>
+</section>
+
+
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

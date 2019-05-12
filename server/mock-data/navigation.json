@@ -1,0 +1,17 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "portfolio_link": "Portfolio",
+        "portfolio_subhead": "View our custom projects",
+        "shop_link": "Shop",
+        "shop_subhead": "View our furniture ",
+        "staging_link": "Design",
+        "staging_subhead": "Interior Design Service",
+        "about_link": "About",
+        "about_subhead": "View our lifestyle ",
+        "contact_link": "Contact",
+        "contact_subhead": "Email, Call, or Visit"
+    }]
+}

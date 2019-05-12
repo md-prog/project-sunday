@@ -1,0 +1,47 @@
+<section class="hero" ng-cloak img-preloader>
+	<div class="hero-img"
+   data-preloader="image"
+   data-attach-method="bg"
+   data-src="img/home/hero-bg.jpg"></div>
+
+  <slick
+	ng-if="featured.length"
+	autoplay="true"
+	autoplay-speed="6000"
+	dots="true"
+	infinite="true"
+	speed="900"
+	touch-move="true"
+	slides-to-show=1
+	slides-to-scroll=1
+	css-ease="cubic-bezier(0.6, 0, 0.1, 1)"
+	class="slider"
+	init-onload="true"
+	data="featured">
+
+	<div class="listItem" ng-repeat="project in featured" repeat-complete="broadcast()">
+  	<div class="bg-image"
+
+     data-preloader="image"
+     data-attach-method="bg"
+     data-src="{{project.hero_image}}"></div>
+      <div class="title">
+        <span class="feature-title">Featured Client</span>
+        <h3>{{ project.client_name }}</h3>
+        <span class="type">{{ project.project_type }}</span>
+         <button ui-sref="project({ slug: project.slug})" class="portfolio-btn">
+          View Now
+        </button>
+      </div>
+	</div>
+
+	</slick>
+	<div ng-if="featured.length" class="numbers"></div>
+</section>
+<section id="pro-grid" ng-cloak>
+	<div class="grid">
+		<div deckgrid source="gridItems" cardTemplate="partials/gallery-card.html" class="deckgrid gallery" ng-if="showGrid"></div>
+	</div>
+</section>
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

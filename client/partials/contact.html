@@ -1,0 +1,44 @@
+<section img-preloader>
+	<div class="hero"
+	 data-preloader="image"
+	 data-attach-method="bg"
+	 data-src="img/home/map-optimized.jpg">
+	  <img
+	   data-preloader="image"
+	   data-attach-method="src"
+	   data-src="img/home/PS_Maptype.png" id="contact-map-text" />
+	</div>
+	<section id="contact">
+		<div class="table-row">
+			<div  class="cell half" in-view="runLogo($index, $inview, $inviewpart, $event)" in-view-options="{offsetTop:300}">
+				<h2>Project Sunday</h2>
+				<svg class="computer" xmlns="http://www.w3.org/2000/svg" width="556.591" height="583.071" viewBox="74.769 0 556.591 583.071">
+					<g fill="none" stroke="#8F7C4F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+						<path d="M253.936 397.348v-244.25h180.072V395.1"/>
+						<path d="M275.972 175.36h136v116.496h-136zM275.972 325.594h18.964v13.675h-18.964zM306.27 203.788l49.795 49.796M343.972 217.475l33.13 33.13M349.64 194.34l21.795 21.798M434.01 153.098l18.926 35.37v223.138l-12.625 14.46"/>
+						<path d="M252.326 397.3H440.31l-18.624 43.635H211.612l40.714-43.636M211.612 440.935v29.926h210.324v-28.99M259.06 426.067H391.5M232.84 411.606s-34.975-50.02 21.096-70.95M434.01 329.36H353.9M432.348 349.456h-43.994M312.176 233.045l43.222 43.222M232.703 455.898H238M251.112 455.898h2.65M381.797 455.898h5.297M400.206 455.898h2.65M269.624 412.075h122.148"/>
+						<path d="M440.31 397.3v46.465l-18.374 27.096M253.936 357.486s-30.117 14.644-10.225 49.047M347.74 471.567V581.07M347.74 2v150.087M348.03 90.544h195.45v196.543M155 286.765V90.545h193.03M455.017 286.926H629.36"/>
+						<path d="M76.77 286.926H251.11"/>
+					</g>
+				</svg>
+			</div>
+			<div class="cell half">
+				<address>
+					{{ contact.company_name }}<br>
+					{{ contact.company_address }}<br>
+					{{ contact.city }} {{ contact.state }}.<br>
+				</address>
+				<p>
+					<a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a><br />
+					<a href="mailto:info@projectsunday.net">info@projectsunday.net</a>
+				</p>
+				<p>
+					{{ contact.contact_copy }}
+				</p>
+			</div>
+		</div>
+
+	</section>
+</section>
+<!-- footer -->
+<ng-include src="'partials/footer.html'"></ng-include>

@@ -1,0 +1,17 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "company_name": "Project Sunday",
+        "company_address": "2212 S West Temple #19-20",
+        "city": "Salt Lake City,",
+        "state": "Utah, 84115",
+        "phone_number": "314-956-8656",
+        "contact_copy": "Showroom hours:  Mon - Fri  (10-5)",
+        "email": "info@projectsunday.net",
+        "hours": "Showroom Hours M-F 10am-5pm",
+        "social_title": "Project Sunday - Contact Us",
+        "social_pic": "http://projectsunday.net/uploads/home/map.jpg"
+    }]
+}
