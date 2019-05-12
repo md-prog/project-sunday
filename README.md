@@ -1,5 +1,7 @@
 # [Project Sunday](http://projectsunday.net)
 This is a replicate of the frontend of the *Project Sunday*'s website.
+The website was selected as the <b>Site of the Day</b> on Oct 06, 2016 by Awwwards.
+
 
 Used technologies:
 - [Angular.js](https://angularjs.org/)
